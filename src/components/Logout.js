@@ -8,7 +8,6 @@ export const LogoutButton = () => {
   return (
     <Button
       variant="dark"
-      style={{ marginRight: "10px" }}
       onClick={() => logout({ returnTo: window.location.origin })}
     >
       Logout

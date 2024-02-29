@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-02-2024 a las 22:34:00
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 29-02-2024 a las 22:43:24
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,59 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `curriculum1`
 --
-CREATE DATABASE IF NOT EXISTS `curriculum1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `curriculum1`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asistencia`
+--
+
+CREATE TABLE `asistencia` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `apellidos` varchar(255) DEFAULT NULL,
+  `dia_1` char(1) DEFAULT NULL,
+  `dia_2` char(1) DEFAULT NULL,
+  `dia_3` char(1) DEFAULT NULL,
+  `dia_4` char(1) DEFAULT NULL,
+  `dia_5` char(1) DEFAULT NULL,
+  `dia_6` char(1) DEFAULT NULL,
+  `dia_7` char(1) DEFAULT NULL,
+  `dia_8` char(1) DEFAULT NULL,
+  `dia_9` char(1) DEFAULT NULL,
+  `dia_10` char(1) DEFAULT NULL,
+  `dia_11` char(1) DEFAULT NULL,
+  `dia_12` char(1) DEFAULT NULL,
+  `dia_13` char(1) DEFAULT NULL,
+  `dia_14` char(1) DEFAULT NULL,
+  `dia_15` char(1) DEFAULT NULL,
+  `dia_16` char(1) DEFAULT NULL,
+  `dia_17` char(1) DEFAULT NULL,
+  `dia_18` char(1) DEFAULT NULL,
+  `dia_19` char(1) DEFAULT NULL,
+  `dia_20` char(1) DEFAULT NULL,
+  `dia_21` char(1) DEFAULT NULL,
+  `dia_22` char(1) DEFAULT NULL,
+  `dia_23` char(1) DEFAULT NULL,
+  `dia_24` char(1) DEFAULT NULL,
+  `dia_25` char(1) DEFAULT NULL,
+  `dia_26` char(1) DEFAULT NULL,
+  `dia_27` char(1) DEFAULT NULL,
+  `dia_28` char(1) DEFAULT NULL,
+  `dia_29` char(1) DEFAULT NULL,
+  `dia_30` char(1) DEFAULT NULL,
+  `dia_31` char(1) DEFAULT NULL,
+  `faltas` int(11) DEFAULT 0,
+  `asistencias` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `asistencia`
+--
+
+INSERT INTO `asistencia` (`id`, `nombre`, `apellidos`, `dia_1`, `dia_2`, `dia_3`, `dia_4`, `dia_5`, `dia_6`, `dia_7`, `dia_8`, `dia_9`, `dia_10`, `dia_11`, `dia_12`, `dia_13`, `dia_14`, `dia_15`, `dia_16`, `dia_17`, `dia_18`, `dia_19`, `dia_20`, `dia_21`, `dia_22`, `dia_23`, `dia_24`, `dia_25`, `dia_26`, `dia_27`, `dia_28`, `dia_29`, `dia_30`, `dia_31`, `faltas`, `asistencias`) VALUES
+(30585858, 'jessi', 'contreras', '.', '.', 'x', 'x', 'x', 'x', 'x', '.', '.', 'x', 'x', 'x', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'x', '.', '.', '.', '.', 'x', 10, 21),
+(304121009, 'Juan', 'Pérez', '.', 'x', '.', '.', 'x', '.', '.', 'x', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'x', '.', '.', '.', '.', '.', 4, 27);
 
 -- --------------------------------------------------------
 
@@ -221,12 +272,17 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`id`, `nombre`, `apellidos`, `correo_electronico`, `telefono`, `direccion`, `codigo_postal`, `localidad`, `titulo`, `fecha_nacimiento`, `lugar_nacimiento`, `genero`, `nacionalidad`, `estado_civil`, `linkedin`, `perfil`, `formacion`, `formacion1`, `formacion2`, `formacion3`, `formacion4`, `formacion5`, `institucion`, `institiucion1`, `institucion2`, `institucion3`, `institucion4`, `institucion5`, `localidad_inst`, `localidad_inst1`, `localidad_inst2`, `localidad_inst3`, `localidad_inst4`, `localidad_inst5`, `fech_inic_inst`, `fech_inic_inst1`, `fech_inic_inst2`, `fech_inic_inst3`, `fech_inic_inst4`, `fech_inic_inst5`, `fech_fin_inst`, `fech_fin_inst1`, `fech_fin_inst2`, `fech_fin_inst3`, `fech_fin_inst4`, `fech_fin_inst5`, `desc_inst`, `desc_inst1`, `desc_inst2`, `desc_inst3`, `desc_inst4`, `desc_inst5`, `puesto`, `puesto1`, `puesto2`, `puesto3`, `puesto4`, `puesto5`, `empleador`, `empleador1`, `empleador2`, `empleador3`, `empleador4`, `empleador5`, `localidad_exp`, `localidad_exp1`, `localidad_exp2`, `localidad_exp3`, `localidad_exp4`, `localidad_exp5`, `fech_inic_exp`, `fech_inic_exp1`, `fech_inic_exp2`, `fech_inic_exp3`, `fech_inic_exp4`, `fech_inic_exp5`, `fech_fin_exp`, `fech_fin_exp1`, `fech_fin_exp2`, `fech_fin_exp3`, `fech_fin_exp4`, `fech_fin_exp5`, `desc_exp`, `desc_exp1`, `desc_exp2`, `desc_exp3`, `desc_exp4`, `desc_exp5`, `idioma`, `idioma1`, `idioma2`, `idioma3`, `idioma4`, `idioma5`, `nivel_idioma`, `nivel_idioma1`, `nivel_idioma2`, `nivel_idioma3`, `nivel_idioma4`, `nivel_idioma5`, `pasatiempo`, `pasatiempo1`, `pasatiempo2`, `pasatiempo3`, `pasatiempo4`, `pasatiempo5`, `curso`, `curso1`, `curso2`, `curso3`, `curso4`, `curso5`, `periodo`, `periodo1`, `periodo2`, `periodo3`, `periodo4`, `periodo5`, `desc_curso`, `desc_curso1`, `desc_curso2`, `desc_curso3`, `desc_curso4`, `desc_curso5`, `aptitud`, `aptitud1`, `aptitud2`, `aptitud3`, `aptitud4`, `aptitud5`, `nombre_ref`, `nombre_ref1`, `nombre_ref2`, `nombre_ref3`, `nombre_ref4`, `nombre_ref5`, `organizacion_ref`, `organizacion_ref1`, `organizacion_ref2`, `organizacion_ref3`, `organizacion_ref4`, `organizacion_ref5`, `local_ref`, `local_ref1`, `local_ref2`, `local_ref3`, `local_ref4`, `local_ref5`, `telefono_ref`, `telefono_ref1`, `telefono_ref2`, `telefono_ref3`, `telefono_ref4`, `telefono_ref5`, `correo_ref`, `correo_ref1`, `correo_ref2`, `correo_ref3`, `correo_ref4`, `correo_ref5`, `certificado`, `certificado1`, `certificado2`, `certificado3`, `certificado4`, `certificado5`, `periodo_cert`, `periodo_cert1`, `periodo_cert2`, `periodo_cert3`, `periodo_cert4`, `periodo_cert5`, `desc_cert`, `desc_cert1`, `desc_cert2`, `desc_cert3`, `desc_cert4`, `desc_cert5`, `logros`, `logros1`, `logros2`, `logros3`, `logros4`, `logros5`) VALUES
-(2, 'a', 'Perez Hernandez', 'ivan@gmail.com', '61800000000', 'Zona Centro', '34180', 'Durango', 'Tecnico Superior Universitario', '13-03-2003', 'Durango', 'Hombre', 'Mexicano', 'Casado', '@ivan', 'Soy blanco privilegiado', 'Primaria', 'sdads', NULL, NULL, NULL, NULL, 'Elena Centeno', NULL, NULL, NULL, NULL, NULL, 'Durango', NULL, NULL, NULL, NULL, NULL, 'Septiembre 2009', NULL, NULL, NULL, NULL, NULL, 'Mayo 2015', NULL, NULL, NULL, NULL, NULL, 'Escuela muy bonita', NULL, NULL, NULL, NULL, NULL, 'Presidente', NULL, NULL, NULL, NULL, NULL, 'BBVA', NULL, NULL, NULL, NULL, NULL, 'Durango', NULL, NULL, NULL, NULL, NULL, 'Septiembre 2021', NULL, NULL, NULL, NULL, NULL, 'Presente', NULL, NULL, NULL, NULL, NULL, 'Muy comodo todo', NULL, NULL, NULL, NULL, NULL, 'Ingles', NULL, NULL, NULL, NULL, NULL, 'B2', NULL, NULL, NULL, NULL, NULL, 'Me gusta jugar rocket', NULL, NULL, NULL, NULL, NULL, 'REDES', NULL, NULL, NULL, NULL, NULL, 'septiembre a diciembre 2021', NULL, NULL, NULL, NULL, NULL, 'Redes con Cisco', NULL, NULL, NULL, NULL, NULL, 'Soy muy bueno en el front end y con las muchachas', NULL, NULL, NULL, NULL, NULL, 'Ivan', NULL, NULL, NULL, NULL, NULL, 'Banorte', NULL, NULL, NULL, NULL, '', 'Durango', NULL, NULL, NULL, NULL, NULL, '6185465823', NULL, NULL, NULL, NULL, NULL, 'banorte@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Redes', NULL, NULL, NULL, NULL, NULL, 'Septiembre a dicimebre 2021', NULL, NULL, NULL, NULL, NULL, 'Chido todo', NULL, NULL, NULL, NULL, NULL, 'Me gradue de Técnico universitario', NULL, NULL, NULL, NULL, NULL),
-(7, 'Jared Emiliano', 'Frias Aguilar', 'jfassj@gmail.com', '61800000000', 'Zona Centro', '34180', 'Durango', 'Tecnico Superior Universitario', '13-03-2003', 'Durango', 'Hombre', 'Mexicano', 'Soltero', '@jfassj', 'Soy trabajador', 'Primaria', '', 'SADA', '', '', '', 'Elena Centeno', '', 'SADAS', '', '', '', 'Durango', '', 'ASD', '', '', '', 'Septiembre 2009', '', 'ADSA', '', '', '', 'Mayo 2015', '', 'ADS', '', '', '', 'Escuela muy bonita', '', 'ADSA', '', '', '', 'Cargador', '', '', '', '', '', 'Jorge Vela Eventos', '', '', '', '', '', 'Durango', '', '', '', '', '', 'Septiembre 2021', '', '', '', '', '', '2023', '', '', '', '', '', 'Muy comodo todo', '', '', '', '', '', 'Ingles', '', '', '', '', '', 'B1', '', '', '', '', '', 'Me gusta jugar rocket', '', '', '', '', '', 'REDES', '', '', '', '', '', 'septiembre a diciembre 2021', '', '', '', '', '', 'Redes con Cisco', '', '', '', '', '', 'Soy muy bueno en el front end', '', '', '', '', '', 'Jared', '', '', '', '', '', 'Jorge Vela Eventos', '', '', '', '', '', 'Durango', '', '', '', '', '', '6185465823', '', '', '', '', '', 'velaeventos@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Me gradue de Técnico universitario', '', '', '', '', '');
+(2, 'Bernardo', 'Castañeda Rios', 'bernardo@gmail.com', '61800000000', 'Zona Centro', '34180', 'Durango', 'Tecnico Superior Universitario', '13-03-2003', 'Durango', 'Hombre', 'Mexicano', 'Casado', '@bernardo', 'Soy blanco privilegiado', 'Primaria', 'sdads', NULL, NULL, NULL, NULL, 'Elena Centeno', NULL, NULL, NULL, NULL, NULL, 'Durango', NULL, NULL, NULL, NULL, NULL, 'Septiembre 2009', NULL, NULL, NULL, NULL, NULL, 'Mayo 2015', NULL, NULL, NULL, NULL, NULL, 'Escuela muy bonita', NULL, NULL, NULL, NULL, NULL, 'Presidente', NULL, NULL, NULL, NULL, NULL, 'BBVA', NULL, NULL, NULL, NULL, NULL, 'Durango', NULL, NULL, NULL, NULL, NULL, 'Septiembre 2021', NULL, NULL, NULL, NULL, NULL, 'Presente', NULL, NULL, NULL, NULL, NULL, 'Muy comodo todo', NULL, NULL, NULL, NULL, NULL, 'Ingles', NULL, NULL, NULL, NULL, NULL, 'B2', NULL, NULL, NULL, NULL, NULL, 'Me gusta jugar rocket', NULL, NULL, NULL, NULL, NULL, 'REDES', NULL, NULL, NULL, NULL, NULL, 'septiembre a diciembre 2021', NULL, NULL, NULL, NULL, NULL, 'Redes con Cisco', NULL, NULL, NULL, NULL, NULL, 'Soy muy bueno en el front end y con las muchachas', NULL, NULL, NULL, NULL, NULL, 'Ivan', NULL, NULL, NULL, NULL, NULL, 'Banorte', NULL, NULL, NULL, NULL, '', 'Durango', NULL, NULL, NULL, NULL, NULL, '6185465823', NULL, NULL, NULL, NULL, NULL, 'banorte@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Redes', NULL, NULL, NULL, NULL, NULL, 'Septiembre a dicimebre 2021', NULL, NULL, NULL, NULL, NULL, 'Chido todo', NULL, NULL, NULL, NULL, NULL, 'Me gradue de Técnico universitario', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `asistencia`
+--
+ALTER TABLE `asistencia`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `persona`
@@ -239,10 +295,16 @@ ALTER TABLE `persona`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `asistencia`
+--
+ALTER TABLE `asistencia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
+
+--
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
